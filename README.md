@@ -109,6 +109,7 @@ pred_data, stats = infer_model(model, model_cfg, scene_data)
 extrinsics = pred_data.extrinsics     # [N, 3, 4]
 intrinsics = pred_data.intrinsics     # [N, 3, 3]
 depth      = pred_data.depth          # [N, H, W]
+depth_conf = pred_data.conf           # [N, H, W]
 ```
 </details>
 
@@ -134,11 +135,11 @@ We provide evaluation code for multiple tasks and benchmarks.
 Please follow the corresponding instructions to prepare each dataset.
 * DA3-Bench (7Scenes, ETH3D, ScanNet++, HiRoom, DTU64, DTU)
     - Follow the [DA3-Bench dataset download instructions](https://github.com/ByteDance-Seed/Depth-Anything-3/blob/main/docs/BENCHMARK.md#-dataset-download) to download the datasets. This should create the `workspace/benchmark_dataset` directory under the project root.
-* Co3D (v2):
+* Co3D (v2)
     - Follow the [VGGT preparation instructions](https://github.com/facebookresearch/vggt/tree/evaluation/evaluation#dataset-preparation) to prepare the dataset and place it under `workspace/benchmark_dataset`.
-* RealEstate10K:
+* RealEstate10K
     - Follow the [Pi3 preparation scripts](https://github.com/yyfz/Pi3/blob/evaluation/datasets/preprocess/prepare_re10k.sh) to prepare the dataset and place it under `workspace/benchmark_dataset`.
-* ScanNet (v2):
+* ScanNet (v2)
     - Follow the [ScanNet instructions](http://www.scan-net.org/ScanNet/) to download the dataset and place it under `workspace/benchmark_dataset`. The list of the 50 evaluation scenes can be found [here](https://github.com/mystorm16/FastVGGT/blob/main/eval/scannet_50.yaml).
 
 The downloaded datasets should be organized under `workspace/benchmark_dataset/` as follows:
@@ -179,7 +180,7 @@ To generate these profiling results from scratch:
 1. Download the calibration dataset (e.g., ETH3D) following the instructions in [DA3-bench](https://github.com/ByteDance-Seed/Depth-Anything-3/blob/main/docs/BENCHMARK.md).
 2. Run the profiling script using the desired configuration file under `configs/profile/`:
    ```bash
-   bash scripts/profile.sh profile_saf3r_vggt.yaml
+   bash scripts/profile.sh profile_saf3r_vggt
    ```
 
 
