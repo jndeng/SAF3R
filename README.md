@@ -14,6 +14,21 @@ SAF3R is a training-free dynamic sparse attention framework that accelerates exi
 * **SAF3R inference patches** that enable dynamic sparse attention inference for VGGT, Pi3, and DA3.
 * **Benchmark and evaluation tools** for evaluating model performance and efficiency. Currently supported benchmarks include DA3-Bench, Co3D-v2, RealEstate10K, and ScanNet.
 
+## Table of Contents
+- [Installation](#installation)
+- [Analysis Tools](#analysis-tools)
+- [Model Inference](#model-inference)
+  - [Running Inference Demo](#running-inference-demo)
+  - [Minimal Code Snippet (for SAF3R-VGGT)](#minimal-code-snippet-for-saf3r-vggt)
+- [Evaluation Benchmarks](#evaluation-benchmarks)
+  - [Supported Benchmarks & Datasets](#supported-benchmarks--datasets)
+  - [Datasets Preparation](#datasets-preparation)
+  - [Running Evaluation](#running-evaluation)
+  - [Benchmarking Efficiency](#benchmarking-efficiency)
+- [Profiling Attention Heads](#profiling-attention-heads)
+- [Acknowledgements](#acknowledgements)
+- [Citation](#citation)
+
 
 ## Installation
 
