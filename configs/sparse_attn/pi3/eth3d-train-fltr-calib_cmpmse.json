@@ -1,0 +1,627 @@
+{
+    "0": [
+        {
+            "mode": "stride",
+            "stride": 128,
+            "include_as": true,
+            "is_base": true,
+            "head_ids": [
+                0,
+                1,
+                2,
+                3,
+                5,
+                6,
+                7,
+                8,
+                10,
+                11,
+                13,
+                14,
+                15
+            ]
+        },
+        {
+            "mode": "all_to_first",
+            "is_base": false,
+            "head_ids": [
+                4,
+                9,
+                12
+            ]
+        }
+    ],
+    "1": [
+        {
+            "mode": "stride",
+            "stride": 128,
+            "include_as": true,
+            "is_base": true,
+            "head_ids": [
+                0,
+                11,
+                12,
+                13
+            ]
+        },
+        {
+            "mode": "all_to_first",
+            "is_base": false,
+            "head_ids": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                14,
+                15
+            ]
+        }
+    ],
+    "2": [
+        {
+            "mode": "all_to_first",
+            "is_base": false,
+            "head_ids": [
+                0,
+                1,
+                3,
+                4,
+                5,
+                6,
+                7,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+            ]
+        },
+        {
+            "mode": "stride",
+            "stride": 128,
+            "include_as": true,
+            "is_base": true,
+            "head_ids": [
+                2,
+                8
+            ]
+        }
+    ],
+    "3": [
+        {
+            "mode": "stride",
+            "stride": 128,
+            "include_as": true,
+            "is_base": true,
+            "head_ids": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+            ]
+        },
+        {
+            "mode": "q_probe_topk",
+            "stride": 128,
+            "is_base": false,
+            "head_ids": [
+                5,
+                15
+            ]
+        }
+    ],
+    "4": [
+        {
+            "mode": "stride",
+            "stride": 128,
+            "include_as": true,
+            "is_base": true,
+            "head_ids": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+            ]
+        }
+    ],
+    "5": [
+        {
+            "mode": "stride",
+            "stride": 128,
+            "include_as": true,
+            "is_base": true,
+            "head_ids": [
+                0,
+                1,
+                2,
+                3,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                13,
+                14,
+                15
+            ]
+        },
+        {
+            "mode": "q_probe_topk",
+            "stride": 128,
+            "is_base": false,
+            "head_ids": [
+                4,
+                12
+            ]
+        }
+    ],
+    "6": [
+        {
+            "mode": "stride",
+            "stride": 128,
+            "include_as": true,
+            "is_base": true,
+            "head_ids": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+            ]
+        }
+    ],
+    "7": [
+        {
+            "mode": "stride",
+            "stride": 128,
+            "include_as": true,
+            "is_base": true,
+            "head_ids": [
+                0,
+                1,
+                2,
+                3,
+                5,
+                6,
+                8,
+                9,
+                10,
+                12,
+                14
+            ]
+        },
+        {
+            "mode": "q_probe_topk",
+            "stride": 128,
+            "is_base": false,
+            "head_ids": [
+                4,
+                7,
+                11,
+                13
+            ]
+        },
+        {
+            "mode": "all_to_first",
+            "is_base": false,
+            "head_ids": [
+                15
+            ]
+        }
+    ],
+    "8": [
+        {
+            "mode": "stride",
+            "stride": 128,
+            "include_as": true,
+            "is_base": true,
+            "head_ids": [
+                0,
+                3,
+                4,
+                5,
+                6,
+                9,
+                10,
+                14,
+                15
+            ]
+        },
+        {
+            "mode": "all_to_first",
+            "is_base": false,
+            "head_ids": [
+                1,
+                2,
+                7,
+                8,
+                11,
+                12,
+                13
+            ]
+        }
+    ],
+    "9": [
+        {
+            "mode": "all_to_first",
+            "is_base": false,
+            "head_ids": [
+                0,
+                5,
+                7,
+                8,
+                14
+            ]
+        },
+        {
+            "mode": "stride",
+            "stride": 128,
+            "include_as": true,
+            "is_base": true,
+            "head_ids": [
+                1,
+                3,
+                4,
+                6,
+                9,
+                11,
+                12,
+                13,
+                15
+            ]
+        },
+        {
+            "mode": "q_probe_topk",
+            "stride": 128,
+            "is_base": false,
+            "head_ids": [
+                2,
+                10
+            ]
+        }
+    ],
+    "10": [
+        {
+            "mode": "stride",
+            "stride": 4,
+            "include_as": true,
+            "is_base": true,
+            "head_ids": [
+                0,
+                1,
+                2,
+                3,
+                5,
+                9,
+                10,
+                11,
+                13,
+                14,
+                15
+            ]
+        },
+        {
+            "mode": "q_probe_topk",
+            "stride": 4,
+            "is_base": false,
+            "head_ids": [
+                4,
+                6,
+                7,
+                8,
+                12
+            ]
+        }
+    ],
+    "11": [
+        {
+            "mode": "stride",
+            "stride": 4,
+            "include_as": true,
+            "is_base": true,
+            "head_ids": [
+                0,
+                2,
+                3,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                14
+            ]
+        },
+        {
+            "mode": "q_probe_topk",
+            "stride": 4,
+            "is_base": false,
+            "head_ids": [
+                1,
+                4,
+                5,
+                13,
+                15
+            ]
+        }
+    ],
+    "12": [
+        {
+            "mode": "q_probe_topk",
+            "stride": 4,
+            "is_base": false,
+            "head_ids": [
+                0,
+                4,
+                9,
+                10,
+                14
+            ]
+        },
+        {
+            "mode": "stride",
+            "stride": 4,
+            "include_as": true,
+            "is_base": true,
+            "head_ids": [
+                1,
+                2,
+                3,
+                5,
+                6,
+                7,
+                8,
+                11,
+                12,
+                13,
+                15
+            ]
+        }
+    ],
+    "13": [
+        {
+            "mode": "stride",
+            "stride": 4,
+            "include_as": true,
+            "is_base": true,
+            "head_ids": [
+                0,
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                11,
+                12,
+                13
+            ]
+        },
+        {
+            "mode": "q_probe_topk",
+            "stride": 4,
+            "is_base": false,
+            "head_ids": [
+                1,
+                3,
+                14
+            ]
+        },
+        {
+            "mode": "dino_topk",
+            "topk": 32768,
+            "dino_sp2sp_stride": 1,
+            "is_base": false,
+            "is_first_dino": true,
+            "head_ids": [
+                10,
+                15
+            ]
+        }
+    ],
+    "14": [
+        {
+            "mode": "stride",
+            "stride": 4,
+            "include_as": true,
+            "is_base": true,
+            "head_ids": [
+                0,
+                2,
+                3,
+                5,
+                6,
+                7,
+                8,
+                11,
+                12,
+                15
+            ]
+        },
+        {
+            "mode": "dino_topk",
+            "topk": 32768,
+            "dino_sp2sp_stride": 1,
+            "is_base": false,
+            "head_ids": [
+                1,
+                4,
+                9,
+                10,
+                14
+            ]
+        },
+        {
+            "mode": "q_probe_topk",
+            "stride": 4,
+            "is_base": false,
+            "head_ids": [
+                13
+            ]
+        }
+    ],
+    "15": [
+        {
+            "mode": "stride",
+            "stride": 4,
+            "include_as": true,
+            "is_base": true,
+            "head_ids": [
+                0,
+                1,
+                2,
+                3,
+                5,
+                6,
+                7,
+                9,
+                10,
+                11,
+                12,
+                15
+            ]
+        },
+        {
+            "mode": "q_probe_topk",
+            "stride": 4,
+            "is_base": false,
+            "head_ids": [
+                4,
+                13,
+                14
+            ]
+        },
+        {
+            "mode": "dino_topk",
+            "topk": 32768,
+            "dino_sp2sp_stride": 1,
+            "is_base": false,
+            "head_ids": [
+                8
+            ]
+        }
+    ],
+    "16": [
+        {
+            "mode": "stride",
+            "stride": 4,
+            "include_as": true,
+            "is_base": true,
+            "head_ids": [
+                0,
+                2,
+                3,
+                5,
+                6,
+                8,
+                13
+            ]
+        },
+        {
+            "mode": "q_probe_topk",
+            "stride": 4,
+            "is_base": false,
+            "head_ids": [
+                1,
+                4,
+                9,
+                10,
+                11,
+                12,
+                14,
+                15
+            ]
+        },
+        {
+            "mode": "global_to_frame",
+            "is_base": false,
+            "head_ids": [
+                7
+            ]
+        }
+    ],
+    "17": [
+        {
+            "mode": "q_probe_topk",
+            "stride": 4,
+            "is_base": false,
+            "head_ids": [
+                0
+            ]
+        },
+        {
+            "mode": "stride",
+            "stride": 4,
+            "include_as": true,
+            "is_base": true,
+            "head_ids": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                13,
+                14,
+                15
+            ]
+        },
+        {
+            "mode": "all_to_first",
+            "is_base": false,
+            "head_ids": [
+                12
+            ]
+        }
+    ]
+}

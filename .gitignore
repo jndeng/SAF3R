@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.tox/
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
+
+# Project specific folders (Large files, datasets, outputs)
+checkpoints/
+iframe_figures/
+workspace/
+workspace
+tmp*
+*.csv
+*.out
+tmp_plots/
+
+# Model weights
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# OS specific
+.DS_Store
+Thumbs.db

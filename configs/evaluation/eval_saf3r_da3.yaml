@@ -1,0 +1,67 @@
+defaults:
+  - default_datasets.yaml
+  - _self_
+
+
+model:
+  name: DA3
+  ckpt_path: checkpoints/da3
+
+  # SAF3R patching
+  # NOTE: The auto-parsed config is not suitable for lazy TopK,
+  # so we use a manually adjusted config that selects a better first correspondence head.
+  sparse_config_path: configs/sparse_attn/da3/adjusted_eth3d-train-fltr-calib_cmpmse.json
+  patch_module:
+    type: headsparse
+
+    ######################## lazy topk ########################
+    # This produces better and more stable results than the DINO TopK config below, while also running faster
+    topk_mode: token
+    lazy_dino_topk: True  # Compute Topk indices from the fist correspondence head instead of from DINO features
+    topk: 8
+
+    ######################## dino topk ########################
+    # topk_mode: token
+    # lazy_dino_topk: False
+    # max_topk: 2048
+    # topk: 64
+    # per_frame_topk: True
+    # include_first_frame: False
+
+
+# Selected datasets for evaluation.
+# Detailed configurations for each dataset can be set below.
+# selected_datasets: [7scenes, eth3d, scannetpp, hiroom, dtu64]
+selected_datasets: [eth3d, co3d, re10k, scannet]
+
+datasets:
+  co3d:
+    debug: False
+    fast_eval: True
+    disable_rand: True
+
+  7scenes:
+    max_frames: 128
+    eval_tasks: [pose, depth]
+
+  eth3d:
+    max_frames: 128
+    eval_tasks: [pose, depth]
+
+  scannetpp:
+    max_frames: 128
+    eval_tasks: [pose, depth]
+  
+  hiroom:
+    max_frames: 128
+    eval_tasks: [pose, depth]
+
+  dtu64:
+    max_frames: 128
+    eval_tasks: [pose]
+
+  scannet:
+    max_frames: 300
+    sample_mode: uniform
+    plot: True
+    plot_dir: tmp_plots/scannet_${.max_frames}

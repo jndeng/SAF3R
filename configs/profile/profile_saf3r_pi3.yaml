@@ -1,0 +1,35 @@
+seed: 0
+
+model:
+  name: Pi3
+  ckpt_path: checkpoints/pi3
+
+  # SAF3R patching
+  profile_config_path: Null  # Set "Null" to profile all heads in all layers
+  profile_save_path: configs/sparse_attn/pi3/eth3d-train-fltr-calib_cmpmse.json
+  patch_module:
+    verbose: False
+    type: headprofile
+    profile_metric: cmp_mse
+    max_topk: 2048
+    topk: 128
+    per_frame_topk: True
+    switch_layer: 10
+    upper_stride: 128
+    lower_stride: 4
+    include_first_frame: False
+
+
+datasets:
+  eth3d:
+    dataset_dir: workspace/benchmark_dataset/eth3d
+    image_type: dslr_images
+    scenes: [
+      courtyard, electro, kicker, pipes, relief, delivery_area,
+      facade, office, playground, relief_2, terrains,
+    ]
+    max_frames: 128
+    sample_mode: uniform
+    indices: Null
+    filter_views: True
+    from_calib_file: True  # Load images in the order specified by the calibration file, rather than by image name

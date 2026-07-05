@@ -1,0 +1,42 @@
+defaults:
+  - default_datasets.yaml
+  - _self_
+
+
+model:
+  name: VGGT
+  dpt_only: True
+  ckpt_path: checkpoints/vggt/model_tracker_fixed_e20.pt
+
+
+# Selected datasets for evaluation.
+# Detailed configurations for each dataset can be set below.
+selected_datasets: [7scenes, eth3d, scannetpp, hiroom, dtu64]
+
+datasets:
+  co3d:
+    debug: False
+    fast_eval: True
+    disable_rand: True
+
+  7scenes:
+    max_frames: 128
+    eval_tasks: [pose, depth]
+
+  eth3d:
+    max_frames: 128
+    eval_tasks: [pose, depth]
+
+  scannetpp:
+    max_frames: 128
+    eval_tasks: [pose, depth]
+
+  hiroom:
+    max_frames: 128
+    eval_tasks: [pose, depth]
+
+  scannet:
+    max_frames: 500
+    sample_mode: uniform
+    plot: False
+    plot_dir: tmp_plots/scannet_${.max_frames}

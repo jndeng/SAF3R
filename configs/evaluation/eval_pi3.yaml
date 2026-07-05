@@ -1,0 +1,45 @@
+defaults:
+  - default_datasets.yaml
+  - _self_
+
+
+model:
+  name: Pi3
+  ckpt_path: checkpoints/pi3
+
+
+# Selected datasets for evaluation.
+# Detailed configurations for each dataset can be set below.
+selected_datasets: [7scenes, eth3d, scannetpp, hiroom, dtu64]
+
+datasets:
+  co3d:
+    debug: False
+    fast_eval: True
+    disable_rand: True
+
+  7scenes:
+    max_frames: 128
+    eval_tasks: [pose, depth]
+
+  eth3d:
+    max_frames: 128
+    eval_tasks: [pose, depth]
+
+  scannetpp:
+    max_frames: 128
+    eval_tasks: [pose, depth]
+  
+  hiroom:
+    max_frames: 128
+    eval_tasks: [pose, depth]
+
+  dtu64:
+    max_frames: 128
+    eval_tasks: [pose]
+
+  scannet:
+    max_frames: 500
+    sample_mode: uniform
+    plot: True
+    plot_dir: tmp_plots/scannet_${.max_frames}
