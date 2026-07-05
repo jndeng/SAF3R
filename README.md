@@ -28,7 +28,7 @@ pip install -e .
 
 ## Analysis Tools
 
-We provide visualization and analysis tools for frame/global attention patterns in each supported model under `tools/`. Each tool is a Jupyter notebook and can be run independently.
+We provide visualization and analysis tools for frame/global attention patterns for each supported model under `tools/`. Each tool is implemented as a standalone Jupyter notebook and can be run independently.
 
 
 ## Model Inference
@@ -75,7 +75,6 @@ model_cfg = Dict(
 )
 
 # 2. Build and automatically patch the model with SAF3R kernels
-# NOTE
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = build_model(model_cfg, device)
 
@@ -99,19 +98,6 @@ depth      = pred_data.depth          # [N, H, W]
 </details>
 
 
-## Profiling Attention Heads
-
-We provide profiled global-attention head configurations under `configs/sparse_attn/`. 
-
-To generate these profiling results from scratch:
-
-1. Download the calibration dataset (e.g., ETH3D) following the instructions in [DA3-bench](https://github.com/ByteDance-Seed/Depth-Anything-3/blob/main/docs/BENCHMARK.md).
-2. Run the profiling script using the desired configuration file under `configs/profile/`:
-   ```bash
-   bash scripts/profile.sh profile_saf3r_vggt.yaml
-   ```
-
-
 ## Evaluation Benchmarks
 
 We provide evaluation code for multiple tasks and benchmarks.
@@ -126,18 +112,19 @@ We provide evaluation code for multiple tasks and benchmarks.
 * RealEstate10K
   - Camera pose estimation
 * ScanNet (v2)
-  - Camera pose estimation and 3D point-cloud reconstruction
+  - Camera pose estimation
+  - 3D point-cloud reconstruction
 
 ### Datasets Preparation
 Please follow the corresponding instructions to prepare each dataset.
 * DA3-Bench (7Scenes, ETH3D, ScanNet++, HiRoom, DTU64, DTU)
-    - Follow the [DA3-Bench dataset download instructions](https://github.com/ByteDance-Seed/Depth-Anything-3/blob/main/docs/BENCHMARK.md#-dataset-download) to download the datasets. This should create `workspace/benchmark_dataset` with the following structure:  
+    - Follow the [DA3-Bench dataset download instructions](https://github.com/ByteDance-Seed/Depth-Anything-3/blob/main/docs/BENCHMARK.md#-dataset-download) to download the datasets. This should create the `workspace/benchmark_dataset` directory under the project root.
 * Co3D (v2):
-    - Follow the [VGGT preparation instructions](https://github.com/facebookresearch/vggt/tree/evaluation/evaluation#dataset-preparation) to download and prepare the dataset. Place the dataset under `works`
+    - Follow the [VGGT preparation instructions](https://github.com/facebookresearch/vggt/tree/evaluation/evaluation#dataset-preparation) to prepare the dataset and place it under `workspace/benchmark_dataset`.
 * RealEstate10K:
-    - Follow the [Pi3 preparation scripts](https://github.com/yyfz/Pi3/blob/evaluation/datasets/preprocess/prepare_re10k.sh) to download and prepare the dataset.
+    - Follow the [Pi3 preparation scripts](https://github.com/yyfz/Pi3/blob/evaluation/datasets/preprocess/prepare_re10k.sh) to prepare the dataset and place it under `workspace/benchmark_dataset`.
 * ScanNet (v2):
-    - Follow the [ScanNet instructions](http://www.scan-net.org/ScanNet/) to download and prepare the **ScanNet v2** dataset. The list of the 50 evaluation scenes can be found [here](https://github.com/mystorm16/FastVGGT/blob/main/eval/scannet_50.yaml).
+    - Follow the [ScanNet instructions](http://www.scan-net.org/ScanNet/) to download the dataset and place it under `workspace/benchmark_dataset`. The list of the 50 evaluation scenes can be found [here](https://github.com/mystorm16/FastVGGT/blob/main/eval/scannet_50.yaml).
 
 The downloaded datasets should be organized under `workspace/benchmark_dataset/` as follows:
 
@@ -154,7 +141,6 @@ workspace/benchmark_dataset/
 └── scannetv2/
 ```
 
-
 ### Running Evaluation
 Run the unified launcher with the desired configuration file:
 ```bash
@@ -162,11 +148,24 @@ bash scripts/evaluate.sh eval_saf3r_vggt
 ```
 
 ### Benchmarking Efficiency
-To evaluate model latency and peak memory usage across different sequences:
+To measure inference latency and peak memory usage across different sequences:
 ```bash
 bash scripts/benchmark_efficiency.sh eval_saf3r_vggt 300
 ```
 This runs the efficiency benchmark using the specified configuration file and sequence length.
+
+
+## Profiling Attention Heads
+
+We provide profiled global-attention head configurations under `configs/sparse_attn/`. 
+
+To generate these profiling results from scratch:
+
+1. Download the calibration dataset (e.g., ETH3D) following the instructions in [DA3-bench](https://github.com/ByteDance-Seed/Depth-Anything-3/blob/main/docs/BENCHMARK.md).
+2. Run the profiling script using the desired configuration file under `configs/profile/`:
+   ```bash
+   bash scripts/profile.sh profile_saf3r_vggt.yaml
+   ```
 
 
 ## Acknowledgements
