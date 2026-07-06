@@ -40,7 +40,7 @@ datasets:
 
   7scenes:
     max_frames: 128
-    eval_tasks: [pose, depth]
+    eval_tasks: [pose, depth, recon_unposed]
 
   eth3d:
     max_frames: 128

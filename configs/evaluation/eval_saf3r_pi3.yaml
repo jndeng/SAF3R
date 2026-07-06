@@ -29,7 +29,6 @@ model:
 
 # Selected datasets for evaluation.
 # Detailed configurations for each dataset can be set below.
-# selected_datasets: [7scenes, eth3d, scannetpp, hiroom, dtu64]
 selected_datasets: [7scenes, eth3d, scannetpp, hiroom, dtu64]
 
 datasets:

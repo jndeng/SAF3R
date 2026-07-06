@@ -31,8 +31,7 @@ model:
 
 # Selected datasets for evaluation.
 # Detailed configurations for each dataset can be set below.
-# selected_datasets: [7scenes, eth3d, scannetpp, hiroom, dtu64]
-selected_datasets: [eth3d, co3d, re10k, scannet]
+selected_datasets: [7scenes, eth3d, scannetpp, hiroom, dtu64]
 
 datasets:
   co3d:
