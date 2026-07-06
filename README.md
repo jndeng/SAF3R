@@ -9,7 +9,7 @@
 SAF3R is a training-free dynamic sparse attention framework that accelerates existing feed-forward 3D reconstruction models, such as VGGT, by reducing the computational cost of global attention. It exploits head-wise sparsity heterogeneity to replace each full global attention head with the sparse attention kernel that best matches its attention pattern.
 
 <p align="center">
-  <img src="assets/teaser.png" alt="Teaser">
+  <img src="assets/teaser.png" alt="Teaser" width="80%">
 </p>
 
 ### What's in this repo
@@ -77,7 +77,8 @@ Supported options for `--model` are `vggt`, `pi3`, and `da3`. By default, the pr
 > The first run may take longer due to JIT compilation of the custom Triton kernels. The compiled kernels are cached and reused in subsequent runs.
 
 <p align="center">
-  <img src="assets/demo_vis.png" alt="Vis">
+  <img src="assets/demo_vis.png" alt="Vis" width="80%">
+  <br>
   <em>Example interactive HTML visualization results.</em>
 </p>
 
