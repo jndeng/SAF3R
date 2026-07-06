@@ -13,7 +13,7 @@ SAF3R is a training-free dynamic sparse attention framework that accelerates exi
 </p>
 
 ### What's in this repo
-* **Visualization tools** for analyzing head-wise global attention patterns in feed-forward 3D reconstruction models. Currently supported models include VGGT, Pi3, DA3, and StreamVGGT (streaming model).
+* **Visualization tools** for analyzing head-wise global attention patterns in feed-forward 3D reconstruction models. Currently supported models include three offline models (VGGT, Pi3, and DA3) and one streaming model (StreamVGGT).
 * **SAF3R offline profiling code** that automatically assigns each global attention head to one of four predefined sparse attention patterns.
 * **SAF3R inference patches** that enable dynamic sparse attention inference for VGGT, Pi3, and DA3.
 * **Benchmark and evaluation tools** for evaluating model performance and efficiency. Currently supported benchmarks include DA3-Bench, Co3D-v2, RealEstate10K, and ScanNet.

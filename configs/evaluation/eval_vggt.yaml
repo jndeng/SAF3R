@@ -38,5 +38,5 @@ datasets:
   scannet:
     max_frames: 500
     sample_mode: uniform
-    plot: False
+    plot: True
     plot_dir: tmp_plots/scannet_${.max_frames}

@@ -75,7 +75,7 @@ datasets:
   scannet:
     scannet_dir: workspace/benchmark_dataset/scannetv2/scans
     scenes: Null                 # Null to use all scenes
-    sample_mode: uniform         # uniform | random
+    sample_mode: uniform         # uniform | stride
     step_size: 5                 # Only used if sample_mode=stride. Sample every step_size frames.
     max_frames: 128
     # NOTE: the default value from FastVGGT is 3.0 which is too strict and causes lots of NaN values and skipped scenes
