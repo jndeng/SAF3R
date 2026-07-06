@@ -62,7 +62,7 @@ We provide visualization and analysis tools for frame/global attention patterns 
 We provide inference example code for using SAF3R on different 3R models.
 
 > [!NOTE]
-> Checkpoints will be automatically downloaded to the local cache directory (`checkpoints/`) during the first run.
+> Checkpoints will be automatically downloaded to the local cache directory `checkpoints/` during the first run.
 > They can also be manually downloaded from [VGGT](https://huggingface.co/facebook/VGGT_tracker_fixed), [Pi3](https://huggingface.co/yyfz233/Pi3), [DA3-GIANT](https://huggingface.co/depth-anything/DA3-GIANT), and [StreamVGGT](https://huggingface.co/lch01/StreamVGGT).
 
 ### Running Inference Demo
@@ -136,7 +136,7 @@ depth_conf = pred_data.conf           # [N, H, W]
 We provide evaluation code for multiple tasks and benchmarks.
 
 ### Supported Benchmarks & Datasets
-* DA3-Bench (7Scenes, ETH3D, ScanNet++, HiRoom, DTU64, DTU)
+* DA3-Bench Datasets (7Scenes, ETH3D, ScanNet++, HiRoom, DTU64, DTU)
   - Camera pose estimation
   - Video depth estimation
   - 3D point-cloud reconstruction
@@ -202,7 +202,7 @@ To generate these profiling results from scratch:
 
 
 ## Acknowledgements
-This repository builds upon several excellent open-source projects, including [VGGT](https://github.com/facebookresearch/vggt), [Pi3](https://github.com/yyfz/Pi3), [DA3](https://github.com/ByteDance-Seed/depth-anything-3), [StreamVGGT](https://github.com/wzzheng/streamvggt), [FastVGGT](https://github.com/mystorm16/FastVGGT), [SparseVGGT](https://github.com/brianwang00001/sparse-vggt), and [Speed3R](https://github.com/Visual-AI/speed3r). We sincerely thank the authors and contributors for making their code publicly available.
+This repository builds upon several excellent open-source projects, including [VGGT](https://github.com/facebookresearch/vggt), [Pi3](https://github.com/yyfz/Pi3), [DA3](https://github.com/ByteDance-Seed/depth-anything-3), [StreamVGGT](https://github.com/wzzheng/streamvggt), [LingBot-Map](https://github.com/robbyant/lingbot-map), [FastVGGT](https://github.com/mystorm16/FastVGGT), [SparseVGGT](https://github.com/brianwang00001/sparse-vggt), and [Speed3R](https://github.com/Visual-AI/speed3r). We sincerely thank the authors and contributors for making their code publicly available.
 
 
 ## Citation

@@ -1,3 +1,6 @@
+"""
+Modified from: https://github.com/mystorm16/FastVGGT/blob/main/vggt/utils/eval_utils.py
+"""
 import os
 import os.path as osp
 from collections import deque
