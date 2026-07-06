@@ -6,7 +6,7 @@
 
 </div>
 
-SAF3R is a training-free dynamic sparse attention framework that accelerates existing feed-forward 3D reconstruction models, such as VGGT, by reducing the computational cost of global attention. By exploiting head-wise sparsity heterogeneity, SAF3R replaces each full global attention head with the sparse attention kernel that best matches its attention pattern.
+SAF3R is a training-free dynamic sparse attention framework that accelerates existing feed-forward 3D reconstruction models, such as VGGT, by reducing the computational cost of global attention. It exploits head-wise sparsity heterogeneity to replace each full global attention head with the sparse attention kernel that best matches its attention pattern.
 
 ### What's in this repo
 * **Visualization tools** for analyzing head-wise global attention patterns in feed-forward 3D reconstruction models. Currently supported models include VGGT, Pi3, DA3, and StreamVGGT (streaming model).
@@ -44,6 +44,13 @@ pip install -e .
 ## Analysis Tools
 
 We provide visualization and analysis tools for frame/global attention patterns for each supported model under `tools/`. Each tool is implemented as a standalone Jupyter notebook and can be run independently.
+
+<p align="center">
+  <img src="assets/vggt_attn_img_overlay.png" height="300" alt="Attention Distribution Overlay" />
+  <img src="assets/vggt_attn_map_heads.png" height="300" alt="Attention Maps of Layer Heads" />
+  <br>
+  <em>Left: Semi-interactive visualization showing the attention distribution of each selected query token (overlaid on the image). Right: Attention maps of all heads in a specific layer.</em>
+</p>
 
 
 ## Model Inference
