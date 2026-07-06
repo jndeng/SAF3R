@@ -47,7 +47,7 @@ pip install -e .
 
 ## Analysis Tools
 
-We provide visualization and analysis tools for frame/global attention patterns for each supported model under `tools/`. Each tool is implemented as a standalone Jupyter notebook and can be run independently. The two main use cases are shown below.
+We provide visualization and analysis tools for frame/global attention patterns for each supported model under `tools/`. For each model, the corresponding tool is implemented as a standalone Jupyter notebook and can be run independently. The two main use cases are shown below.
 
 <p align="center">
   <img src="assets/vggt_attn_img_overlay.png" height="400" alt="Attention Distribution Overlay" style="margin: 0 15px;" />
@@ -71,7 +71,7 @@ To run a demo inference script using a specific model on your image directories:
 ```bash
 python scripts/inference_demo.py --model vggt --data_dir data/courthouse
 ```
-Supported options for `--model` are `vggt`, `pi3`, and `da3`. By default, the predicted point clouds will be exported under `tmp_plots/` as `.ply` files and interactively visualizable `.html` files.
+Supported options for `--model` are `vggt`, `pi3`, and `da3`. By default, the predicted point clouds will be exported under `tmp_plots/` as `.ply` files and browser-viewable interactive `.html` visualizations.
 
 > [!NOTE]
 > The first run may take longer due to JIT compilation of the custom Triton kernels. The compiled kernels are cached and reused in subsequent runs.
@@ -151,28 +151,69 @@ We provide evaluation code for multiple tasks and benchmarks.
 ### Datasets Preparation
 Please follow the corresponding instructions to prepare each dataset.
 * DA3-Bench (7Scenes, ETH3D, ScanNet++, HiRoom, DTU64, DTU)
-    - Follow the [DA3-Bench dataset download instructions](https://github.com/ByteDance-Seed/Depth-Anything-3/blob/main/docs/BENCHMARK.md#-dataset-download) to download the datasets. This should create the `workspace/benchmark_dataset` directory under the project root.
+    - Follow the [DA3-Bench dataset download instructions](https://github.com/ByteDance-Seed/Depth-Anything-3/blob/main/docs/BENCHMARK.md#-dataset-download) to download the datasets. This should create the `workspace/benchmark_dataset/` directory under the project root.
 * Co3D (v2)
-    - Follow the [VGGT preparation instructions](https://github.com/facebookresearch/vggt/tree/evaluation/evaluation#dataset-preparation) to prepare the dataset and place it under `workspace/benchmark_dataset`.
+    - Follow the [VGGT preparation instructions](https://github.com/facebookresearch/vggt/tree/evaluation/evaluation#dataset-preparation) to prepare the dataset and place it under `workspace/benchmark_dataset/`.
 * RealEstate10K
-    - Follow the [Pi3 preparation scripts](https://github.com/yyfz/Pi3/blob/evaluation/datasets/preprocess/prepare_re10k.sh) to prepare the dataset and place it under `workspace/benchmark_dataset`.
+    - Follow the [Pi3 preparation scripts](https://github.com/yyfz/Pi3/blob/evaluation/datasets/preprocess/prepare_re10k.sh) to prepare the dataset and place it under `workspace/benchmark_dataset/`.
 * ScanNet (v2)
-    - Follow the [ScanNet instructions](http://www.scan-net.org/ScanNet/) to download the dataset and place it under `workspace/benchmark_dataset`. The list of the 50 evaluation scenes can be found [here](https://github.com/mystorm16/FastVGGT/blob/main/eval/scannet_50.yaml).
+    - Follow the [ScanNet instructions](http://www.scan-net.org/ScanNet/) to download the dataset and place it under `workspace/benchmark_dataset/`. The list of the 50 evaluation scenes can be found [here](https://github.com/mystorm16/FastVGGT/blob/main/eval/scannet_50.yaml).
 
 The downloaded datasets should be organized under `workspace/benchmark_dataset/` as follows:
+
+
+<details>
+<summary>Show dataset structure</summary>
 
 ```text
 workspace/benchmark_dataset/
 ├── 7scenes/
-├── co3dv2/
-├── dtu/
-├── dtu64/
+│   └── 7Scenes/
+│       ├── chess/
+│       └── ...
 ├── eth3d/
-├── hiroom/
-├── realestate10k/
+│   ├── courtyard/
+│   ├── electro/
+│   └── ...
 ├── scannetpp/
+│   ├── 09c1414f1b/
+│   └── ...
+├── hiroom/
+│   ├── data/
+│   ├── fused_pcd/
+│   └── selected_scene_list_val.txt
+├── dtu/
+│   ├── Rectified/
+│   ├── Cameras/
+│   ├── Points/
+│   ├── SampleSet/
+│   └── depth_raw/
+├── dtu64/
+│   ├── Cameras/
+│   ├── scan105/
+│   └── ...
+├── co3dv2/
+│   ├── vggt_testset
+│   │   ├── apple/
+│   │   └── ...
+│   └── vggt_anno
+│       ├── apple_test.jgz
+│       └── ...
+├── realestate10k/
+│   ├── data/re10k
+│   │   ├── 005dd9a58df1ba3c/
+│   │   └── ...
+│   └── datasets/seq-id-maps
+│       └── Re10K_relpose_seq-id-map_seed42.json
 └── scannetv2/
+    ├── scans/
+    │   ├── scene0000_00/
+    │   ├── scene0013_02/
+    │   └── ...
+    └── scannet_50.yaml
 ```
+</details>
+
 
 ### Running Evaluation
 Run the unified launcher with the desired configuration file:

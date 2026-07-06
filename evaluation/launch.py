@@ -1,8 +1,7 @@
 """
 Unified launcher for evaluation scripts.
 Automatically calls the appropriate evaluation script in a separate child process
-based on the datasets specified in the config. This guarantees complete isolation 
-of PyTorch CUDA contexts and heavy C++ library bindings (e.g. Open3D/PyColmap).
+based on the datasets specified in the config.
 """
 import os
 import sys

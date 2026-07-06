@@ -11,7 +11,7 @@ datasets:
     use_ba: False
     debug: False        # Set to False to evaluate all categories
     fast_eval: True     # Only evaluate 10 sequences per category
-    disable_rand: True
+    disable_rand: True  # Set to True if each category folder under co3d_dir has already been filtered to 10 images; all found images will be used for evaluation
 
   re10k:
     re10k_dir: workspace/benchmark_dataset/realestate10k/data/re10k
@@ -59,7 +59,7 @@ datasets:
     ]
     sample_mode: uniform
     max_frames: 128
-    eval_tasks: [pose]
+    eval_tasks: [pose]  # NOTE: only `pose` is supported
 
   dtu:
     scenes: [
@@ -70,13 +70,13 @@ datasets:
     ]
     sample_mode: uniform
     max_frames: 128
-    eval_tasks: [recon_unposed]
+    eval_tasks: [recon_unposed]  # NOTE: only `recon_unposed` is supported
 
   scannet:
     scannet_dir: workspace/benchmark_dataset/scannetv2/scans
     scenes: Null                 # Null to use all scenes
     sample_mode: uniform         # uniform | stride
-    step_size: 5                 # Only used if sample_mode=stride. Sample every step_size frames.
+    step_size: 5                 # Only used if sample_mode=stride; Sample every step_size frames
     max_frames: 128
     # NOTE: the default value from FastVGGT is 3.0 which is too strict and causes lots of NaN values and skipped scenes
     depth_conf_thresh: 1.0       # Depth confidence threshold for filtering low confidence depth values
