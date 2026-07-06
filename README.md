@@ -50,8 +50,9 @@ pip install -e .
 We provide visualization and analysis tools for frame/global attention patterns for each supported model under `tools/`. For each model, the corresponding tool is implemented as a standalone Jupyter notebook and can be run independently. The two main use cases are shown below.
 
 <p align="center">
-  <img src="assets/vggt_attn_img_overlay.png" height="400" alt="Attention Distribution Overlay" style="margin: 0 15px;" />
-  <img src="assets/vggt_attn_map_heads.png" height="400" alt="Attention Maps of Layer Heads" style="margin: 0 15px;" />
+  <img src="assets/vggt_attn_img_overlay.png" height="400" alt="Attention Distribution Overlay" />
+  &emsp;&emsp;
+  <img src="assets/vggt_attn_map_heads.png" height="400" alt="Attention Maps of Layer Heads" />
   <br>
   <em>Left: Semi-interactive visualization of the attention distribution for each selected query token (blue box), overlaid on the image. Right: Attention maps of all heads in a specific layer.</em>
 </p>
