@@ -8,6 +8,10 @@
 
 SAF3R is a training-free dynamic sparse attention framework that accelerates existing feed-forward 3D reconstruction models, such as VGGT, by reducing the computational cost of global attention. It exploits head-wise sparsity heterogeneity to replace each full global attention head with the sparse attention kernel that best matches its attention pattern.
 
+<p align="center">
+  <img src="assets/teaser.png" alt="Teaser">
+</p>
+
 ### What's in this repo
 * **Visualization tools** for analyzing head-wise global attention patterns in feed-forward 3D reconstruction models. Currently supported models include VGGT, Pi3, DA3, and StreamVGGT (streaming model).
 * **SAF3R offline profiling code** that automatically assigns each global attention head to one of four predefined sparse attention patterns.
@@ -43,13 +47,13 @@ pip install -e .
 
 ## Analysis Tools
 
-We provide visualization and analysis tools for frame/global attention patterns for each supported model under `tools/`. Each tool is implemented as a standalone Jupyter notebook and can be run independently.
+We provide visualization and analysis tools for frame/global attention patterns for each supported model under `tools/`. Each tool is implemented as a standalone Jupyter notebook and can be run independently. The two main use cases are shown below.
 
 <p align="center">
-  <img src="assets/vggt_attn_img_overlay.png" height="350" alt="Attention Distribution Overlay" style="margin: 0 15px;" />
-  <img src="assets/vggt_attn_map_heads.png" height="350" alt="Attention Maps of Layer Heads" style="margin: 0 15px;" />
+  <img src="assets/vggt_attn_img_overlay.png" height="400" alt="Attention Distribution Overlay" style="margin: 0 15px;" />
+  <img src="assets/vggt_attn_map_heads.png" height="400" alt="Attention Maps of Layer Heads" style="margin: 0 15px;" />
   <br>
-  <em>Left: Semi-interactive visualization showing the attention distribution of each selected query token (overlaid on the image). Right: Attention maps of all heads in a specific layer.</em>
+  <em>Left: Semi-interactive visualization of the attention distribution for each selected query token (blue box), overlaid on the image. Right: Attention maps of all heads in a specific layer.</em>
 </p>
 
 
@@ -71,6 +75,11 @@ Supported options for `--model` are `vggt`, `pi3`, and `da3`. By default, the pr
 
 > [!NOTE]
 > The first run may take longer due to JIT compilation of the custom Triton kernels. The compiled kernels are cached and reused in subsequent runs.
+
+<p align="center">
+  <img src="assets/demo_vis.png" alt="Vis">
+  <em>Example interactive HTML visualization results.</em>
+</p>
 
 ### Minimal Code Snippet (for SAF3R-VGGT)
 

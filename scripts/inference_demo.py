@@ -79,11 +79,11 @@ def main(args):
     # Plot results (camera & points) as a HTML file
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
     html_path = f"tmp_plots/saf3r_{model_name}_{ts}.html"
-    plot_html(scene_data, pred_data, html_path, keep_ratio=0.7, cmap_name="rainbow")
+    plot_html(scene_data, pred_data, html_path, keep_ratio=args.keep_ratio, cmap_name="rainbow")
 
     # Save the point clouds as a PLY file
     ply_path = f"tmp_plots/saf3r_{model_name}_{ts}.ply"
-    save_ply(pred_data, ply_path, keep_ratio=0.5, max_points=200000)
+    save_ply(pred_data, ply_path, keep_ratio=args.keep_ratio-0.2, max_points=200000)
 
 
 if __name__ == "__main__":
@@ -95,6 +95,10 @@ if __name__ == "__main__":
     parser.add_argument(
         "--data_dir", type=str, default="data/courthouse",
         help="Root directory containing the input images"
+    )
+    parser.add_argument(
+        "--keep_ratio", type=float, default=0.7,
+        help="Ratio of points to keep for visualization and point cloud export"
     )
     args = parser.parse_args()
     main(args)
