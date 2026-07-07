@@ -2,7 +2,7 @@
 
 <h1>SAF3R: Dynamic Sparse Attention for Feed-Forward 3D Reconstruction Transformers</h1>
 
-[![Paper](https://img.shields.io/static/v1?label=Paper&message=arXiv-xxxx.xxxxx&color=red&logo=arxiv)](https://arxiv.org/abs/xxxx.xxxxx)
+[![Paper](https://img.shields.io/static/v1?label=Paper&message=arXiv-2607.03612&color=red&logo=arxiv)](https://arxiv.org/abs/2607.03612)
 
 </div>
 
@@ -251,4 +251,10 @@ This repository builds upon several excellent open-source projects, including [V
 If you find SAF3R useful for your research or project, please consider citing:
 
 ```bibtex
+@article{deng2026saf3r,
+  title={SAF3R: Dynamic Sparse Attention for Feed-Forward 3D Reconstruction Transformers},
+  author={Deng, Jianing and Li, Yuanzhe and Wang, Jialu and Wang, Song and Chen, Tianlong and Yang, Huanrui and Hu, Jingtong},
+  journal={arXiv preprint arXiv:2607.03612},
+  year={2026}
+}
 ```
