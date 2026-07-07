@@ -48,7 +48,7 @@ def build_model(model_cfg, device):
         ).to(device).eval()
 
     elif model_cfg.name.lower() == "streamvggt":
-        from saf3r.models.official_streamvggt.models.streamvggt import StreamVGGT
+        from ..models.official_streamvggt.models.streamvggt import StreamVGGT
         model = StreamVGGT()
 
         # AUTO download the checkpoint if not provided
